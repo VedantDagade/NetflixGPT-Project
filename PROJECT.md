@@ -4,6 +4,15 @@
   - [text](https://tailwindcss.com/docs/installation/using-vite)
 
  
+ - Create Vite App
+ - Configure Tailwind
+ - Header
+ - Login Form
+  
+
+
+---
+
 ## Features -:
 
 - Login / SignUp Page-:
