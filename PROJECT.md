@@ -14,6 +14,7 @@
  - Form Validation
  - useRef Hook -: for Form Validations
  - Authentication -: Google FireBase
+ - Deploying App to production
   
 
 
