@@ -7,16 +7,14 @@ import { auth } from "../utils/firebase";
 import React, { useState, useRef } from "react";
 import Header from "./Header";
 import checkValideData from "../utils/validate";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 
 const Login = () => {
   //by default true therefore show sign in if toogle then sign up
-  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const [isSignInForm, setIsSignInForm] = useState(true);
-
 
   //Form Validations
   const name = useRef(null);
@@ -49,17 +47,18 @@ const Login = () => {
         email.current.value,
         password.current.value
       )
-        .then((userCredential) => {
+        .then(() => {
           // Signed up
-          const user = userCredential.user;
 
-          updateProfile(user, {
+          updateProfile(auth.currentUser, {
             displayName: name.current?.value,
             photoURL: "https://avatars.githubusercontent.com/u/175466875?v=4",
           })
-            .then(() => {
+            .then(async () => {
               // Profile updated!
               // ...
+              await auth.currentUser.reload(); // ✅ Ensure fresh data
+
               const { uid, email, displayName, photoURL } = auth.currentUser; //Hey Redux, please addUser this data
 
               dispatch(
@@ -70,7 +69,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
@@ -78,14 +76,12 @@ const Login = () => {
               setErrorMessage(error.message);
             });
 
-          console.log(user);
-          navigate("/browse");
+          // ✅ No need to log user here
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + "" + errorMessage);
-          navigate("/");
         });
     } else {
       //sign in logic
@@ -94,17 +90,14 @@ const Login = () => {
         email.current.value,
         password.current.value
       )
-        .then((userCredential) => {
+        .then(() => {
           // Signed in
-          const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
+          // ✅ No need to store `user` if not used
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + "" + errorMessage);
-          navigate("/");
         });
     }
   };
