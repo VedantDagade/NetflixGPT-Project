@@ -32,7 +32,7 @@
 
   - useRef Hooks -: lets you refrence of value that's not needed for rendering
   
-  - For Name Validation we use regex
+  - For Name Validation we use regex-: 
     /^[a-zA-Z ]{2,30}$/.test(name);
 
   - For Email validation we use Regex
@@ -40,7 +40,7 @@
     email
   );
 
-  - For Password Validation we use regex 
+  - For Password Validation we use regex-: 
        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password)
 
 
