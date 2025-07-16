@@ -13,6 +13,7 @@
  - Sign Up Form
  - Form Validation
  - useRef Hook -: for Form Validations
+ - Authentication -: Google FireBase
   
 
 
@@ -45,9 +46,14 @@
 
 
 
+---
+# Authentication-: Google FireBase with Google Analytics
+ - [text](https://console.firebase.google.com)
 
+ - ![alt text](image.png)
+ - [text](https://console.firebase.google.com/u/0/project/netflixgpt-vedant/authentication/providers)
 
-
+---
 # Browse Page
 - Browse Page()-: Only comes after Authentication.-:
    - Header
