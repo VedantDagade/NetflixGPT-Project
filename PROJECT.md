@@ -18,7 +18,14 @@
 - Login / SignUp Page-:
   - Sign In / Sign Up form
   - redirect to browse page
-  
+
+  - Sign In -: Email, Password
+  - Sign Up -: Name , Email , Password 
+  - Build a Sign In and Sign Up form Using Usestate ==> Toggle Feature. if t rue ==> sign In if false ==> Sign Up.
+
+  - If the Very Big Form Is required then use Libray name ====> FORMIK
+
+
 
 - Browse Page()-: Only comes after Authentication.-:
    - Header
@@ -26,7 +33,7 @@
        - Trailer in BackGround
        - Title & Description
        - Movie Suggestions
-          - MovieLists * 
+          - MovieLists * N   (verticle scrollable)
 
 - NetFlixGpt
    - Search Bar
