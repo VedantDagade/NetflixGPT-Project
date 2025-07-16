@@ -3,11 +3,16 @@
  - Create a Vite app with TailwindCss using TailwindCss docx.
   - [text](https://tailwindcss.com/docs/installation/using-vite)
 
- 
+
+# Step by Step of Creating NetflixGPT App-:
  - Create Vite App
  - Configure Tailwind
  - Header
+ - Routing Of App
  - Login Form
+ - Sign Up Form
+ - Form Validation
+ - useRef Hook -: for Form Validations
   
 
 
@@ -25,8 +30,17 @@
 
   - If the Very Big Form Is required then use Libray name ====> FORMIK
 
+  - useRef Hooks -: lets you refrence of value that's not needed for rendering
+
+  - For Email validation we use Regex
+  - For Testing-: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/.test(email)
 
 
+
+
+
+
+# Browse Page
 - Browse Page()-: Only comes after Authentication.-:
    - Header
    - Main Movie
