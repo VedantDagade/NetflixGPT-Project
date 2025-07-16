@@ -101,7 +101,8 @@
 
 // export default Login;
 
-
+import { createUserWithEmailAndPassword , signInWithEmailAndPassword} from "firebase/auth";
+import {auth} from "../utils/firebase";
 import React, { useState, useRef } from "react";
 import Header from "./Header";
 import checkValideData from "../utils/validate";
@@ -109,11 +110,6 @@ import checkValideData from "../utils/validate";
 const Login = () => {
   //by default true therefore show sign in if toogle then sign up
   const [isSignInForm, setIsSignInForm] = useState(true);
-
-  //toggle Feature
-  const toggleSignInForm = () => {
-    setIsSignInForm(!isSignInForm);
-  };
 
   //Form Validations
   const name = useRef(null);
@@ -134,7 +130,49 @@ const Login = () => {
 
     setErrorMessage(message);
 
-    // Sign In / Sign Up
+    if (message) return;
+
+
+
+    //sign in and sign up logic
+    //when message === null then new user is created.
+
+    if(!isSignInForm){
+      //sign up logic
+      createUserWithEmailAndPassword(auth, email.current.value , password.current.value)
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + "" + errorMessage);
+        });
+    } else {
+      //sign in logic
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user)
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + "" + errorMessage);
+        });
+    }
+  };
+
+  //toggle Feature
+  const toggleSignInForm = () => {
+    setIsSignInForm(!isSignInForm);
   };
 
   return (

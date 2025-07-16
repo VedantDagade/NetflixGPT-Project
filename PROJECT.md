@@ -15,6 +15,7 @@
  - useRef Hook -: for Form Validations
  - Authentication -: Google FireBase
  - Deploying App to production
+ - Create Sign Up User account
   
 
 
@@ -53,7 +54,11 @@
 
  - ![alt text](image.png)
  - [text](https://console.firebase.google.com/u/0/project/netflixgpt-vedant/authentication/providers)
+ - after successfully signed up (move to) ====> Browse Page 
 
+
+
+ 
 ---
 # Browse Page
 - Browse Page()-: Only comes after Authentication.-:

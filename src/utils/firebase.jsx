@@ -1,16 +1,10 @@
-// Import the functions you need from the SDKs you need
+// firebase.js
+
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
-import { logEvent } from "firebase/analytics";
 
-// After user logs in or signs up
-logEvent(analytics, "login", { method: "email" });
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// ✅ Always initialize app first
 const firebaseConfig = {
   apiKey: "AIzaSyDZkbZzte1F8_kITyDjFXoJCT29A5kCg1w",
   authDomain: "netflixgpt-vedant.firebaseapp.com",
@@ -21,6 +15,11 @@ const firebaseConfig = {
   measurementId: "G-QEL3ZSR2B9",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// ✅ Initialize analytics AFTER app
 const analytics = getAnalytics(app);
+
+// ✅ Export for usage in other files
+export const auth = getAuth();
+export { analytics };
