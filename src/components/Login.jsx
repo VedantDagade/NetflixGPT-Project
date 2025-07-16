@@ -1,16 +1,22 @@
-import { createUserWithEmailAndPassword , signInWithEmailAndPassword} from "firebase/auth";
-import {auth} from "../utils/firebase";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import { auth } from "../utils/firebase";
 import React, { useState, useRef } from "react";
 import Header from "./Header";
 import checkValideData from "../utils/validate";
 import { useNavigate } from "react-router-dom";
-
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
   //by default true therefore show sign in if toogle then sign up
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [isSignInForm, setIsSignInForm] = useState(true);
 
-  const navigate = useNavigate();
 
   //Form Validations
   const name = useRef(null);
@@ -33,17 +39,45 @@ const Login = () => {
 
     if (message) return;
 
-
-
     //sign in and sign up logic
     //when message === null then new user is created.
 
-    if(!isSignInForm){
+    if (!isSignInForm) {
       //sign up logic
-      createUserWithEmailAndPassword(auth, email.current.value , password.current.value)
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
+
+          updateProfile(user, {
+            displayName: name.current?.value,
+            photoURL: "https://avatars.githubusercontent.com/u/175466875?v=4",
+          })
+            .then(() => {
+              // Profile updated!
+              // ...
+              const { uid, email, displayName, photoURL } = auth.currentUser; //Hey Redux, please addUser this data
+
+              dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              );
+              navigate("/browse");
+            })
+            .catch((error) => {
+              // An error occurred
+              // ...
+              setErrorMessage(error.message);
+            });
+
           console.log(user);
           navigate("/browse");
         })
@@ -51,7 +85,7 @@ const Login = () => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + "" + errorMessage);
-          navigate("/")
+          navigate("/");
         });
     } else {
       //sign in logic
@@ -63,14 +97,14 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user)
-          navigate("/browse")
+          console.log(user);
+          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + "" + errorMessage);
-          navigate("/")
+          navigate("/");
         });
     }
   };
