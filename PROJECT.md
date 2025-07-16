@@ -16,7 +16,10 @@
  - Authentication -: Google FireBase
  - Deploying App to production
  - Create Sign Up User account
-  
+ - Implement Sign in User api
+ - Setup Redux Store with userSlice
+ 
+
 
 
 ---
@@ -57,8 +60,68 @@
  - after successfully signed up (move to) ====> Browse Page 
 
 
+---
+# Redux Store-:
+ - Redux is used for global state management, and Redux Toolkit is the modern, simplified way to use Redux.
 
- 
+ - ![alt text](image-1.png)
+
+ - Storing & sharing user information globally across your app.
+
+ - Redux Toolkit-: 
+  ```
+  npm i -D @reduxjs/toolkit
+  ```
+
+  - React Redux-:
+  ```
+  npm i react-redux
+  ```
+
+  - Create -: 
+   1) utils/appStore.js
+   2) utils/userSlice.js
+
+  - instead of push user date to everytime we use onAuth state change provided by firebase.
+  - Body.jsx ==> appstore.jsx ==> userslice.jsx ==> login.jsx ==> on success => browse page 
+
+- App Starts
+│
+├── Body.jsx (Main Component)
+│   │
+│   ├── ✅ useEffect (onAuthStateChanged listens for login/logout)
+│   │       ├── If user is logged in → dispatch(addUser)
+│   │       └── If user logs out     → dispatch(removeUser)
+│   │
+│   └── Provides routes using <RouterProvider>
+│       │
+│       ├── "/"        → BodyContent (default route, not really used here)
+│       ├── "/login"   → Login.jsx  ← (user goes here manually or redirected)
+│       ├── "/browse"  → Browse.jsx (after successful login/signup)
+│       └── "/header"  → Header.jsx
+│
+├── appstore.jsx
+│   └── Creates Redux store with userSlice
+│
+├── userSlice.jsx
+│   ├── addUser() → saves user data in Redux store
+│   └── removeUser() → clears user data on logout
+│
+└── Login.jsx (only when user visits /login)
+    │
+    ├── Form input (email, password, name for signup)
+    ├── validate inputs
+    ├── 🔐 Calls Firebase Auth:
+    │     ├── createUserWithEmailAndPassword (Sign Up)
+    │     └── signInWithEmailAndPassword (Sign In)
+    │
+    └── On success:
+          🔁 Firebase triggers onAuthStateChanged in Body.jsx
+          → Redux store updated with addUser()
+          → Navigates to "/browse"
+   
+
+
 ---
 # Browse Page
 - Browse Page()-: Only comes after Authentication.-:
