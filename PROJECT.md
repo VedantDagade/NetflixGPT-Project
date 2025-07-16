@@ -31,9 +31,17 @@
   - If the Very Big Form Is required then use Libray name ====> FORMIK
 
   - useRef Hooks -: lets you refrence of value that's not needed for rendering
+  
+  - For Name Validation we use regex
+    /^[a-zA-Z ]{2,30}$/.test(name);
 
   - For Email validation we use Regex
-  - For Testing-: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/.test(email)
+     For Testing-: /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(
+    email
+  );
+
+  - For Password Validation we use regex 
+       /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password)
 
 
 

@@ -4,7 +4,7 @@ const checkValideData = (name , email , password, isSignInForm) => {
 
 
   const isNameValid = isSignInForm || /^[a-zA-Z ]{2,30}$/.test(name); // only letters and spaces, 2 to 30 characters. When isSignInForm === false, that means you're in Sign Up mode, and then=> Name becomes required.
-
+  
   const isEmailValid = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(
     email
   );
