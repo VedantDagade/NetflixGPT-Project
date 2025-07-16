@@ -24,14 +24,6 @@ const Header = () => {
         src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
         alt="logo"
       />
-      <div className="flex p-2">
-        <img
-          className="w-12 h-12 "
-          alt="usericon"
-          src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-        />
-        <button className="font-bold text-white">Sign Out</button>
-      </div>
     </div>
   );
 };
