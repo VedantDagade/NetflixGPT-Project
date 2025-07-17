@@ -18,7 +18,8 @@ const BodyContent = () => (
 
 // 👇 Define routes outside of component (this is fine)
 const appRouter = createBrowserRouter([
-  { path: "/", element: <BodyContent /> },
+  //{ path: "/", element: <BodyContent /> },
+  { path: "/", element: <Login /> },
   { path: "/login", element: <Login /> },
   { path: "/header", element: <Header /> },
   { path: "/browse", element: <Browse /> },

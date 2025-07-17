@@ -9,6 +9,7 @@ import Header from "./Header";
 import checkValideData from "../utils/validate";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { USER_AVATAR , BACKGROUND_IMAGE } from "../utils/constant";
 
 const Login = () => {
   //by default true therefore show sign in if toogle then sign up
@@ -16,7 +17,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const [isSignInForm, setIsSignInForm] = useState(true);
 
-  //Form Validations
+  //!Form Validations
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
@@ -37,7 +38,8 @@ const Login = () => {
 
     if (message) return;
 
-    //sign in and sign up logic
+
+    //!sign in and sign up logic
     //when message === null then new user is created.
 
     if (!isSignInForm) {
@@ -52,7 +54,7 @@ const Login = () => {
 
           updateProfile(auth.currentUser, {
             displayName: name.current?.value,
-            photoURL: "https://avatars.githubusercontent.com/u/175466875?v=4",
+            photoURL: USER_AVATAR ,
           })
             .then(async () => {
               // Profile updated!
@@ -114,7 +116,7 @@ const Login = () => {
       {/* Background Image */}
       <div className="absolute inset-0 -z-10 ">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/7d2359a4-434f-4efa-9ff3-e9d38a8bde7f/web/IN-en-20250707-TRIFECTA-perspective_4faa9280-a2c5-4e07-aafc-a45ce43fea09_large.jpg"
+          src={BACKGROUND_IMAGE}
           alt="Background"
           className="w-full h-full object-cover bg-gradient-to-b from-black"
         />

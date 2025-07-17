@@ -20,6 +20,11 @@
  - Setup Redux Store with userSlice
  - Implemented Sign Out
  - Update Profile
+ - Bug fix -: sign up user displayname and profile pic updated.
+ - If any user is not logged in then it restrict to access browse page and redirect to login vice versa.
+ - Unsubscribed to the onAuth State change callback
+ - Add Hardcore Values to Constatns file
+
  
 
 
@@ -123,6 +128,10 @@
           → Redux store updated with addUser()
           → Navigates to "/browse"
    
+
+--- 
+## FlowChart-:
+  ![alt text](flowchart.png)
 
 
 ---
