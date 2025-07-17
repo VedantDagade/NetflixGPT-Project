@@ -29,7 +29,6 @@ const appRouter = createBrowserRouter([
 const Body = () => {
   //const dispatch = useDispatch(); // ✅ Move hook inside component
 
-
   return <RouterProvider router={appRouter} />;
 };
 

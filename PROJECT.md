@@ -151,4 +151,9 @@
 - NetFlixGpt
    - Search Bar
    - Movie Suggestions
+
+- TMDB Api-:
+  - getting now playing movie api make it constant make api call using custome hook
+  - update the redux store with slices
+  
             
