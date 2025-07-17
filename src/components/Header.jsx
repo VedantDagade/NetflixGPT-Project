@@ -8,6 +8,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { Logo , USER_AVATAR } from "../utils/constant";
+import { LogOut } from "lucide-react";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -61,11 +62,12 @@ const Header = () => {
 
       {user && (
         <div className="flex">
-          <img className="w-12 h-12" alt="usericon" src={USER_AVATAR} />
+          <img className="w-12 h-12 rounded-sm" alt="usericon" src={USER_AVATAR} />
           <button
-            className="font-bold text-white hover:text-red-500"
+            className="font-semibold text-white hover:text-red-500 ml-3"
             onClick={handleSignOut}
           >
+            <LogOut />
             Sign Out
           </button>
         </div>
