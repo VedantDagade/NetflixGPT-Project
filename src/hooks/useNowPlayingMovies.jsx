@@ -16,7 +16,7 @@ const useNowPlayingMovies = () => {
         API_OPTIONS
       );
       const json = await data.json();
-
+      //console.log(json);
       // Update Redux store with fetched movies
       dispatch(addNowPlayingMovies(json.results));
     };
@@ -24,5 +24,6 @@ const useNowPlayingMovies = () => {
     getNowPlayingMovies();
   }, [dispatch]);
 };
+
 
 export default useNowPlayingMovies;

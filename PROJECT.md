@@ -157,3 +157,10 @@
   - update the redux store with slices
   
             
+- Shadcn Ui is now installed-:
+- Lucide React is also used for icons.
+  - 
+    ```
+    npm install lucide-react
+    ```
+  - 
