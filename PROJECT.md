@@ -24,6 +24,10 @@
  - If any user is not logged in then it restrict to access browse page and redirect to login vice versa.
  - Unsubscribed to the onAuth State change callback
  - Add Hardcore Values to Constatns file
+ - Register for TMDB API and create an app & get access token.
+ - Get Data from TMDB now Playing Movie Api
+ - Data is reduced and slice using redux and store in reduxstore
+ - Start building browse page
 
  
 
