@@ -28,6 +28,12 @@
  - Get Data from TMDB now Playing Movie Api
  - Data is reduced and slice using redux and store in reduxstore
  - Start building browse page
+ - Completed Browse page in 2 sections
+  - 1) MaiContainer
+    - VideoTitle
+    - VideoBackground
+
+  - 2) Secondary container
 
  
 
@@ -164,3 +170,7 @@
     npm install lucide-react
     ```
   - 
+
+- MainContainer
+  - Background Title
+  - Background Video
