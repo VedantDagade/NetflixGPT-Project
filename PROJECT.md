@@ -172,7 +172,7 @@
 - TMDB Api-:
   - getting now playing movie api make it constant make api call using custome hook
   - update the redux store with slices
-  
+- Dynamic Movie traile is make by using random function within movielenth
             
 - Shadcn Ui is now installed-:
 - Lucide React is also used for icons.
@@ -185,3 +185,10 @@
 - MainContainer
   - Background Title
   - Background Video
+
+
+# Build Secondary Container-:
+  - To hide horizontal scollbar add tailwind class
+    [&::-webkit-scrollbar]:hidden scrollbar-width-none
+  - Multiple Horizontal movielist is creted
+  - 

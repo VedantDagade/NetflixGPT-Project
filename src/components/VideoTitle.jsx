@@ -5,7 +5,7 @@ import { ArrowRight, ArrowLeft , Play , Info } from "lucide-react";
 
 const VideoTitle = ({ title, overview }) => {
   return (
-    <div className="pt-[22%] px-4 sm:px-8 md:px-12 text-white absolute bg-gradient-to-r from-black/70 h-screen">
+    <div className="pt-[15%] px-4 sm:px-8 md:px-12 text-white absolute bg-gradient-to-r from-black/80 h-screen">
       <h1 className="font-bold text-3xl sm:text-4xl md:text-6xl w-full sm:w-2/3 md:w-1/2">
         {title}
       </h1>
