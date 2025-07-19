@@ -13,7 +13,7 @@ export const BACKGROUND_IMAGE = "https://assets.nflxext.com/ffe/siteui/vlv3/7d23
 
 
 
-//TMDB API Options
+//TMDB API Options for 
 export const API_OPTIONS = {
   method: 'GET',
   headers: {
@@ -21,6 +21,8 @@ export const API_OPTIONS = {
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1Nzg5MWJmZTk5ZWExNjg2NWI0OGM2OTQ0YzU2OWNmMSIsIm5iZiI6MTc1MjczNjkxNi44NzksInN1YiI6IjY4NzhhNDk0ZTA3ZDEyMzYwNWFmMGNmNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Iq179CHe1oBkZxcP0HtRYuWKCcjO7rUe1y4XHUQS1F0'
   }
 };
+
+
 
 
 
