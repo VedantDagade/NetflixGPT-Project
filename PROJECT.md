@@ -86,6 +86,11 @@
  - ![alt text](image.png)
  - [text](https://console.firebase.google.com/u/0/project/netflixgpt-vedant/authentication/providers)
  - after successfully signed up (move to) ====> Browse Page 
+ - use for firebase deploy testing-:
+  ```
+  npm install -g serve
+  serve -s dist
+  ```
 
 
 ---
