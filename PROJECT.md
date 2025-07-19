@@ -25,7 +25,18 @@
  - Unsubscribed to the onAuth State change callback
  - Add Hardcore Values to Constatns file
  - Register for TMDB API and create an app & get access token.
+
  - Get Data from TMDB now Playing Movie Api
+ - Make custome hook
+   - NowPlaying movie
+   - Create Movie Sclice
+   - Update store with movie data
+   - Plannig for maincontainer AND Secondary
+   - Fetch Data for Trailer Video
+   - Update store with trailer Video Data
+   - Embeded Yoututbe Video Make it autoplay and mute
+   - Tailwind classes to look main container 
+
  - Data is reduced and slice using redux and store in reduxstore
  - Start building browse page
  - Completed Browse page in 2 sections
