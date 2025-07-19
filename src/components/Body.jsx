@@ -3,6 +3,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Login from "./Login";
 import Browse from "./Browse";
 import Header from "./Header";
+import HomePage from "./HomePage";
 // import { onAuthStateChanged } from "firebase/auth";
 // import { auth } from "../utils/firebase";
 // import { useDispatch } from "react-redux";
@@ -19,7 +20,7 @@ const BodyContent = () => (
 // 👇 Define routes outside of component (this is fine)
 const appRouter = createBrowserRouter([
   //{ path: "/", element: <BodyContent /> },
-  { path: "/", element: <Login /> },
+  { path: "/", element: <HomePage /> },
   { path: "/login", element: <Login /> },
   { path: "/header", element: <Header /> },
   { path: "/browse", element: <Browse /> },
