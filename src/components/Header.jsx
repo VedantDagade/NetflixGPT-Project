@@ -9,11 +9,24 @@ import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { Logo , USER_AVATAR } from "../utils/constant";
 import { LogOut } from "lucide-react";
+import { Button } from "./ui/button";
+import { toggleGptSearchView } from "@/utils/gptSlice";
+
+
+
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
+  
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
+
+  const handleGptSearch = () => {
+    //Toggle the GPT search component visibility or functionality
+    
+    dispatch(toggleGptSearchView());
+  }
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -54,15 +67,22 @@ const Header = () => {
 
   return (
     <div className="absolute top-0 left-0 w-full z-10 px-4 sm:px-6 py-4 sm:py-6 bg-gradient-to-b from-black flex justify-between">
-      <img
-        className="w-28 sm:w-36 md:w-44"
-        src={Logo}
-        alt="logo"
-      />
+      <img className="w-28 sm:w-36 md:w-44" src={Logo} alt="logo" />
 
       {user && (
-        <div className="flex">
-          <img className="w-12 h-12 rounded-sm" alt="usericon" src={USER_AVATAR} />
+        <div className="flex p-2">
+          <Button
+            className="py-2 px-4 mx-6 my-2"
+            variant="secondary"
+            onClick={handleGptSearch}
+          >
+            {showGptSearch ? "Home" : "GPT Search"}
+          </Button>
+          <img
+            className="w-12 h-12 rounded-sm"
+            alt="usericon"
+            src={USER_AVATAR}
+          />
           <button
             className="font-semibold text-white hover:text-red-500 ml-3"
             onClick={handleSignOut}

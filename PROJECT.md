@@ -46,9 +46,7 @@
 
   - 2) Secondary container
 
- 
-
-
+ - GPT Search Page and add this in Header.
 
 ---
 
@@ -197,3 +195,13 @@
     [&::-webkit-scrollbar]:hidden scrollbar-width-none
   - Multiple Horizontal movielist is creted
   - 
+
+
+---
+# OpenAi GPT Api-:
+ - Make Build GPT Search page in components
+ - Make toggle function when click gpt search btn redirect to Gpt search page else show main and secondary containers.
+ - GPT Search Page
+  - search Bar component
+  - MovieSuggestion Component
+  

@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./userSlice";
 import moviesReducer from "./movieSlice";
+import gptReducer from "./gptSlice";
 
 // Create store-: main memory
 
@@ -12,6 +13,8 @@ const appStore = configureStore({
     //I want to store user data using userReducer (which comes from userSlice.jsx
 
     movies: moviesReducer,
+
+    gpt: gptReducer,
   },
 });
 
