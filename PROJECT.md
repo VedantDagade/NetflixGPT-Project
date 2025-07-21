@@ -205,3 +205,6 @@
   - search Bar component
   - MovieSuggestion Component
   
+- Lnaguage Option-:
+  - import dropdown menu from shadcn ui
+  
