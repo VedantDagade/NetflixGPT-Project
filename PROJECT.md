@@ -47,6 +47,11 @@
   - 2) Secondary container
 
  - GPT Search Page and add this in Header.
+ - GptSearch Bar
+ - MultiLanguagle ( Feature ) in our app
+ - InteGrate GPT Api.
+
+
 
 ---
 
@@ -204,7 +209,10 @@
  - GPT Search Page
   - search Bar component
   - MovieSuggestion Component
-  
-- Lnaguage Option-:
-  - import dropdown menu from shadcn ui
-  
+
+ - Get api key from OpenAi platform.com
+ - install library
+  ```
+  npm i openai
+  ```
+   

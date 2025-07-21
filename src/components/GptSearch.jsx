@@ -11,7 +11,7 @@ const GptSearch = () => {
         <img
           src={BACKGROUND_IMAGE}
           alt="Background"
-          className="w-full h-full object-cover bg-gradient-to-r from-black"
+          className="w-screen h-full object-cover bg-gradient-to-r from-black"
         />
       </div>
       <GptSearchBar />
