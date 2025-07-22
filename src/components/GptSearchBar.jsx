@@ -49,7 +49,7 @@ const GptSearchBar = () => {
 
     const tmdbResults = await Promise.all(promiseArray);
 
-    console.log(tmdbResults);
+    //console.log(tmdbResults);
 
     dispatch(addGptMovieResult({movieNames: gptMovies,movieResults: tmdbResults}));
   };
