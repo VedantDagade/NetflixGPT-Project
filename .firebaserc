@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "netflixgpt-vedant"
-  }
+    "default": "moviegpt-vedant"
+  },
+  "targets": {},
+  "etags": {}
 }
