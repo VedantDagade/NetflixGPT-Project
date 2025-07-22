@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase"; // your auth instance
@@ -12,7 +13,6 @@ import { LogOut } from "lucide-react";
 import { Button } from "./ui/button";
 import { toggleGptSearchView } from "@/utils/gptSlice";
 import { changeLanguage } from "@/utils/configSlice";
-
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -65,15 +65,20 @@ const Header = () => {
 
   const handleLanguageChange = (e) => {
     dispatch(changeLanguage(e.target.value));
-  }
+  };
 
   return (
-    <div className="absolute top-0 left-0 w-full z-10 px-4 sm:px-6 py-4 sm:py-6 bg-gradient-to-b from-black flex justify-between">
-      <img className="w-28 sm:w-36 md:w-44" src={Logo} alt="logo" />
+    <div className="absolute top-0 left-0 w-full z-10 px-4 sm:px-6 py-4 sm:py-6 bg-gradient-to-b from-black flex flex-col md:flex-row justify-between">
+      <img
+        className="w-28 sm:w-36 md:w-44 mx-auto md:mx-0"
+        src={Logo}
+        alt="logo"
+      />
 
       {user && (
-        <div className="flex p-2">
-          {showGptSearch && <select
+        <div className="flex p-2 mt-3">
+          {showGptSearch && (
+            <select
               className="bg-gradient-to-r from-purple-600 to-red-700 text-white rounded-lg  p-2 mx-3 m-2 border-none"
               onChange={handleLanguageChange}
             >
@@ -87,7 +92,7 @@ const Header = () => {
                 </option>
               ))}
             </select>
-          }
+          )}
           <Button
             className="py-2 px-4 mx-4 my-2 text-white bg-gradient-to-r from-blue-600 to-purple-800"
             variant="secondary"
