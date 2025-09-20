@@ -45,15 +45,6 @@ Users can:
 - 🎥 Watch trailers & view details  
 - ❤️ Save favorites (optional with Firebase)  
 
----
-
-## 📝 Resume One-liner
-**NetflixGPT** — React + Redux web app integrating TMDB & OpenAI GPT to provide conversational movie discovery and personalized recommendations.  
-
-**Resume bullets:**
-- Built a movie recommendation system using **React, Redux, TMDB API, and OpenAI GPT API**.  
-- Implemented caching, secure API handling, and conversational UI for movie discovery.  
-- Deployed frontend via **Vercel** with CI/CD and serverless OpenAI proxy integration.  
 
 ---
 
